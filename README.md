@@ -1,2 +1,2 @@
 # introduction to web programming
-Introductory app for coding workshop at ready2order
+Introductory app for non-dev collegues at ready2order
