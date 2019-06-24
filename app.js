@@ -32,10 +32,8 @@
     const checkboxEl = document.createElement("label");
     checkboxEl.className = "checkbox-container";
     checkboxEl.innerHTML = `
-    <label class="checkbox-container">
         <input type="checkbox" />
         <span class="list-item-name">${todo}</span>
-    </label>
     `;
 
     // Create edit action icon

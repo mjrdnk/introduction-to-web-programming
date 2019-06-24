@@ -103,7 +103,7 @@ input[type="checkbox"] {
 }
 
 input[type="checkbox"]:checked::before {
-  content: "✓";
+  content: "\2713";
   color: #1493be;
   font-size: 30px;
   font-weight: 600;
