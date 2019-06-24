@@ -15,10 +15,10 @@ git tag -l
 
 you can jump between parts of this workshop's code:
 
-step-1 - added HTML structure with classes
-step-2 - added styles in <style /> tag
-step-3 - added adding, removing and marking todo as done
-step-4 - added Firebase with Firestore
+1. step-1 - added HTML structure with classes
+2. step-2 - added styles in <style /> tag
+3. step-3 - added adding, removing and marking todo as done
+4. step-4 - added Firebase with Firestore
 
 ## For step-4:
 
