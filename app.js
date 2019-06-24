@@ -1,3 +1,5 @@
+// This doesn't implement input sanitization to show something during the workshop if we have time
+
 (function() {
   const todos = ["Walk the dog", "Go shopping for new Jeans", "Learn web"];
   const inputEl = document.getElementById("todo-input");
@@ -28,20 +30,30 @@
     const todoEl = document.createElement("div");
     todoEl.className = "list-item";
 
-    // Create checkbox with todo text ('checkbox-container')
-    const checkboxEl = document.createElement("label");
-    checkboxEl.className = "checkbox-container";
-    checkboxEl.innerHTML = `
-        <input type="checkbox" />
-        <span class="list-item-name">${todo}</span>
-    `;
+    // Create checkbox container with todo text ('checkbox-container')
+    const checkboxContainerEl = document.createElement("label");
+    checkboxContainerEl.className = "checkbox-container";
 
-    // Create edit action icon
-    const editActionEl = document.createElement("img");
-    editActionEl.className = "action";
-    editActionEl.src = "./assets/icon_edit.svg";
-    editActionEl.alt = "Action - edit todo";
-    editActionEl.addEventListener("click", () => editTodo(todoEl));
+    // Create checkbox
+    const checkboxEl = document.createElement("input");
+    checkboxEl.type = "checkbox";
+
+    // Create name
+    const todoNameEl = document.createElement("span");
+    todoNameEl.className = "list-item-name";
+    todoNameEl.innerHTML = todo;
+
+    // When checkboxEl is created,
+    // We can listen on container click events
+    // And depend on checkboxEl.checked value for toggling
+    checkboxContainerEl.addEventListener("click", () => {
+      toggleDone(checkboxEl.checked, todoEl);
+    });
+
+    // Build up checkbox container
+    // We will attach it to the DOM after all elements are created
+    checkboxContainerEl.appendChild(checkboxEl);
+    checkboxContainerEl.appendChild(todoNameEl);
 
     // Create delete action icon
     const deleteActionEl = document.createElement("img");
@@ -51,18 +63,21 @@
     deleteActionEl.addEventListener("click", () => deleteTodo(todoEl));
 
     // Build up the element
-    todoEl.appendChild(checkboxEl);
-    todoEl.appendChild(editActionEl);
+    todoEl.appendChild(checkboxContainerEl);
     todoEl.appendChild(deleteActionEl);
 
     return todoEl;
   }
 
-  function editTodo(todoEl) {
-    console.log("edit me: ", todoEl);
-  }
-
   function deleteTodo(todoEl) {
     todoListEl.removeChild(todoEl);
+  }
+
+  function toggleDone(isDone, todoEl) {
+    if (isDone) {
+      todoEl.classList.add("done");
+    } else {
+      todoEl.classList.remove("done");
+    }
   }
 })();
