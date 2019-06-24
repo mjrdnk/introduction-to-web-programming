@@ -129,3 +129,7 @@ input[type="checkbox"]:checked {
   cursor: pointer;
   margin: 0 10px;
 }
+
+.list-item.done > label > span {
+  text-decoration: line-through;
+}
