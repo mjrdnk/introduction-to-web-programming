@@ -20,7 +20,7 @@ you can jump between parts of this workshop's code:
 
 ## For step-4:
 
-Project is usign Firebase. It is necessary to add your Firebase project's config:
+Project is using Firebase. It is necessary to add your Firebase project's config:
 
 ### Cloning environmental variables made easy
 
@@ -35,7 +35,7 @@ Please replace the values with your Firebase values.
 # enhancements tasks
 
 1. Sort todos in descending manner by `creationDate`.
-   To achieve this task you will need to add `creationDate` to saved todo. Unix milisecond timestamp represents date and it is also a number, so maybe it is a good idea to use it here.
+   To achieve this task you will need to add `creationDate` to saved todo. Unix millisecond timestamp represents date and it is also a number, so maybe it is a good idea to use it here.
 
 2. ...
 
